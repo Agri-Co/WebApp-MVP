@@ -5,7 +5,6 @@ import useCurrentWidth from '../../width';
 import useCurrentHeight from '../../height';
 
 function LoginTitle() {
-  let width = useCurrentWidth()
   let height = useCurrentHeight()
 
     return(
@@ -27,7 +26,6 @@ function LoginTitle() {
 }
 
 function LoginPage() {
-  let width = useCurrentWidth()
   let height = useCurrentHeight()
   const inputEmail = useRef('')
   const inputPassword = useRef('')

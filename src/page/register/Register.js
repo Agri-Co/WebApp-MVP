@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Spacer, Text, Button, Grid } from '@nextui-org/react';
+import { Input, Spacer, Text, Grid } from '@nextui-org/react';
 import { useRef } from 'react';
 
 function RegisterTitle() {

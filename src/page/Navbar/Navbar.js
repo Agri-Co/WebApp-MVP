@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Button, Text, Link } from '@nextui-org/react'
+import { Navbar, Button, Link } from '@nextui-org/react'
 
 export default function NavbarComponent() {
   const collapseItems = [
