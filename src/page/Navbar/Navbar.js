@@ -2,12 +2,12 @@ import React from 'react'
 import { Navbar, Button, Link } from '@nextui-org/react'
 
 export default function NavbarComponent() {
-  const collapseItems = [
-    "Home",
-    "Profile",
-    "Login",
-    "Register"
-  ]
+  // const collapseItems = [
+  //   "Home",
+  //   "Profile",
+  //   "Login",
+  //   "Register"
+  // ]
     return (
         <Navbar isBordered variant="sticky" maxWidth={"fluid"}>
             <Navbar.Brand>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Spacer, Text, Button } from '@nextui-org/react';
 import { useRef } from 'react';
-import useCurrentWidth from '../../width';
+// import useCurrentWidth from '../../width';
 import useCurrentHeight from '../../height';
 
 function LoginTitle() {
