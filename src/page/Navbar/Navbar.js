@@ -9,7 +9,7 @@ export default function NavbarComponent() {
   //   "Register"
   // ]
     return (
-        <Navbar isBordered variant="sticky" maxWidth={"fluid"}>
+        <Navbar isBordered variant="sticky" maxWidth={"fluid"} blur='10px'>
             <Navbar.Brand>
             </Navbar.Brand>
             <Navbar.Content hideIn="xs" variant={"underline"} enableCursorHighlight>
