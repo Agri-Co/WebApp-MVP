@@ -44,7 +44,7 @@ function LoginPage() {
         </div>
         <Spacer y = {2}/>
             <div className='inputpassword' align="center">
-                <Input.Password labelPlaceholder="Password" clearable  size='xl' ref={inputPassword} />
+                <Input.Password labelPlaceholder="Password" clearable width={'300px'} size='xl' ref={inputPassword} />
             </div>
         <Spacer y = {2}/>
         <div className='buttonlogin' align="center">
