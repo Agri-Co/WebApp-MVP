@@ -39,7 +39,7 @@ function LoginPage() {
     <div className='LoginPage' align="center" >
         <LoginTitle />
         <Spacer y = {(height / 16) / 20}/>
-        <div className='inputmail' align="flex-left">
+        <div className='inputmail'>
            <Input clearable labelPlaceholder="Email" width={'300px'} size={'xl'} ref={inputEmail} />
         </div>
         <Spacer y = {2}/>
