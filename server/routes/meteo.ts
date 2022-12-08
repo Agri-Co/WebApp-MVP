@@ -10,7 +10,7 @@ const token = process.env.API_CONCEPT_TOKEN;
 const getHumidity = async (code: string) => {
   return axios
     .get(
-      `https://api.meteo-concept.com/api/forecast/nextHours?token=1e3b29ef365797617089bfe9337486ec8ea65d3e73085946851b4fef738991e1&insee=${code}`
+      `https://api.meteo-concept.com/api/forecast/nextHours?token=${token}&insee=${code}`
     )
     .then((response) => {
       console.log("Humidity is at", response.data.forecast[0].rh2m + "%");

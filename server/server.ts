@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from "express";
+import initdb from "./db/db";
 import meteo from "./routes/meteo";
 
 class Server {
@@ -19,6 +20,14 @@ class Server {
     this._app.use("*", (req: Request, res: Response) =>
       res.status(404).send("Not found")
     );
+  }
+
+  public async initdb() {
+    try {
+      await initdb();
+    } catch {
+      console.log("Connection to the database failed.");
+    }
   }
 
   public run(): void {

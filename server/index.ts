@@ -10,4 +10,4 @@ const server = new Server(
   String(process.env.METHOD)
 );
 
-server.run();
+server.initdb().then(() => server.run());
