@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { NextUIProvider, createTheme } from '@nextui-org/react';
 import App from './App';
 import {BrowserRouter} from "react-router-dom"
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 const theme = createTheme({
   type: 'dark',
@@ -22,9 +23,11 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <NextUIProvider theme={theme}>
-      <App />
-    </NextUIProvider>
-  </BrowserRouter>
+  <ProSidebarProvider>
+    <BrowserRouter>
+      <NextUIProvider theme={theme}>
+        <App />
+      </NextUIProvider>
+    </BrowserRouter>
+  </ProSidebarProvider>
 );
