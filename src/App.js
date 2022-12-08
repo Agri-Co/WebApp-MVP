@@ -16,10 +16,9 @@ function App({ Component }) {
     <div className='App'>
       <NavbarComponent />
       <SidebarComponent/>
-      <div style={{ 
-                    position:'absolute',
+      <div align='center' style={{
                     zIndex:0,
-                    marginLeft: width / 2.2}}>
+                    }}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
