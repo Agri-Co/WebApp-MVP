@@ -23,7 +23,7 @@ export default function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Content hideIn="xs" variant={"underline"} >
             <Navbar.Item isActive={checkLocation("/")}>
-              <Button auto light animated='false'>
+              <Button auto light size={'xl'}>
                 <Link to="/">
                   <Text color='white'>
                     Home
@@ -32,7 +32,7 @@ export default function NavbarComponent() {
               </Button>
             </Navbar.Item>
             <Navbar.Item isActive={checkLocation("/profil/test")}>
-              <Button auto light animated='false'>
+              <Button auto light size={'xl'}>
                 <Link to="/profil/test">
                   <Text color='white'>
                     Profil
@@ -43,7 +43,7 @@ export default function NavbarComponent() {
         </Navbar.Content>
         <Navbar.Content>
           <Navbar.Item isActive={checkLocation("/login")} variant={"underline"}>
-            <Button auto light>
+            <Button auto light size={'xl'}>
               <Link to="/login">
                 <Text color='white'>
                   Login
@@ -51,10 +51,13 @@ export default function NavbarComponent() {
               </Link>
             </Button>
           </Navbar.Item>
-          <Navbar.Item isActive={checkLocation("/register")}>
-            
-            <Button auto flat>
-              <Link to="./register"> <Text color='white'>Sign Up</Text></Link>
+          <Navbar.Item>
+            <Button auto flat size={'xl'}>
+              <Link to="./register"> 
+                <Text color='white'>
+                  Sign Up
+                </Text>
+              </Link>
             </Button>
           </Navbar.Item>
         </Navbar.Content>
