@@ -1,5 +1,5 @@
 import express, { Express, Request, Response } from "express";
-import Db from "./db/db";
+import Db from "../db/db";
 import meteo from "./routes/meteo";
 
 class Server {
