@@ -1,5 +1,5 @@
 import express, { Express, Request, Response } from "express";
-import initdb from "./db/db";
+import Db from "./db/db";
 import meteo from "./routes/meteo";
 
 class Server {
@@ -7,6 +7,7 @@ class Server {
     this.port = port;
     this.host = host;
     this.method = method;
+    this._db = new Db();
     this._app = express();
     this._app.use(express.json());
     this.applyRoutes();
@@ -22,9 +23,17 @@ class Server {
     );
   }
 
+  public async registerUser(username: string, password: string) {
+    try {
+      await this._db.registerUsertoDB(username, password);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   public async initdb() {
     try {
-      await initdb();
+      await this._db.run();
     } catch {
       console.log("Connection to the database failed.");
     }
@@ -43,6 +52,7 @@ class Server {
   private readonly host: string;
   private readonly method: string;
   private readonly _app: Express;
+  private readonly _db: Db;
 }
 
 export default Server;
