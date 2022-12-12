@@ -1,7 +1,7 @@
-import React, {onPress} from 'react'
+import React from 'react'
 import { Navbar, Button, Text } from '@nextui-org/react'
 import { useProSidebar } from 'react-pro-sidebar'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function NavbarComponent() {
   let location = useLocation()

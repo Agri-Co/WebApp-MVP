@@ -3,7 +3,7 @@ import { Spacer, Text } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 
 export default function Home() {
-  const {width, height} = useWindowSize()
+  const {height} = useWindowSize()
   return (
     <div className='Home_Title'>
       <Spacer y = {(height / 16)/ 15}/>

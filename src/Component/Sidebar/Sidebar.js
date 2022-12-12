@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import { Button } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 
 function SidebarComponent() {
-    const {width, height} = useWindowSize()
+    const {height} = useWindowSize()
 
     return (
         <div className='SidebarComponent'
