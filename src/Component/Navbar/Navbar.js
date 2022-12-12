@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {onPress} from 'react'
 import { Navbar, Button, Text } from '@nextui-org/react'
 import { useProSidebar } from 'react-pro-sidebar'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 export default function NavbarComponent() {
   let location = useLocation()
-
+  const navigate = useNavigate()
 
   function checkLocation(path) {
     if (location.pathname === path)
@@ -16,48 +16,46 @@ export default function NavbarComponent() {
 
   const { collapseSidebar } = useProSidebar()
 
+  function goto(path) {
+    return (
+      navigate(path)
+    )
+  }
+
   return (
     <Navbar isBordered variant="sticky" maxWidth={"fluid"} blur='10px'>
         <Navbar.Brand>
-          <Button auto onPress={() => collapseSidebar()}>AGG</Button>
+          <Button auto onPress={() => collapseSidebar()}>Sidebar</Button>
         </Navbar.Brand>
         <Navbar.Content hideIn="xs" variant={"underline"} >
             <Navbar.Item isActive={checkLocation("/")}>
-              <Button auto light size={'xl'}>
-                <Link to="/">
+              <Button auto light size={'xl'} onPress={() => goto("/")}>
                   <Text color='white'>
                     Home
                   </Text>
-                </Link>
               </Button>
             </Navbar.Item>
-            <Navbar.Item isActive={checkLocation("/profil/test")}>
-              <Button auto light size={'xl'}>
-                <Link to="/profil/test">
+            {/* <Navbar.Item isActive={checkLocation("/profil/test")}>
+              <Button auto light size={'xl'} onPress={() => goto("/profil/test")}>
                   <Text color='white'>
                     Profil
                   </Text>
-                </Link>
               </Button>
-            </Navbar.Item>
+            </Navbar.Item> */}
         </Navbar.Content>
         <Navbar.Content>
           <Navbar.Item isActive={checkLocation("/login")} variant={"underline"}>
-            <Button auto light size={'xl'}>
-              <Link to="/login">
-                <Text color='white'>
+            <Button auto light size={'xl'} onPress={() => goto("/login")}>
+               <Text color='white'>
                   Login
                 </Text>
-              </Link>
             </Button>
           </Navbar.Item>
           <Navbar.Item>
-            <Button auto flat size={'xl'}>
-              <Link to="./register"> 
+            <Button auto flat size={'xl'} onPress={() => goto("/register")}>
                 <Text color='white'>
                   Sign Up
                 </Text>
-              </Link>
             </Button>
           </Navbar.Item>
         </Navbar.Content>
