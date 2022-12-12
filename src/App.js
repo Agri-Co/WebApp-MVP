@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './Page/home/Home'
 import LoginPage from './Page/login/Login';
 import RegisterPage from './Page/register/Register'
-import Profile from './Page/Profile/Profile';
+// import Profile from './Page/Profile/Profile';
 import { Routes, Route } from "react-router-dom"
 import NavbarComponent from './Component/Navbar/Navbar'
 import SidebarComponent from './Component/Sidebar/Sidebar';
@@ -23,7 +23,7 @@ function App({ Component }) {
           <Route path='/' element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/profil/:id" element={<Profile />} />
+          {/* <Route path="/profil/:id" element={<Profile />} /> */} 
         </Routes>
       </div>
 
