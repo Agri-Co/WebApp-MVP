@@ -1,12 +1,12 @@
 import React from 'react';
 import { Input, Spacer, Text, Button } from '@nextui-org/react';
 import { useRef } from 'react';
-import useCurrentHeight from '../../height';
+import { useWindowSize } from 'react-use'
 
 
 
 function RegisterTitle() {
-    let height = useCurrentHeight()
+    const {height} = useWindowSize()
 
     return(
         <div className='Login_Title' align="center">
@@ -25,7 +25,7 @@ function RegisterTitle() {
 }
 
 export default function RegisterPage() {
-    let height = useCurrentHeight()
+    const {height} = useWindowSize()
     const inputEmail = useRef('')
     const inputPassword = useRef('')
 

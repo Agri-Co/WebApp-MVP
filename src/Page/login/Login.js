@@ -1,12 +1,11 @@
 import React from 'react';
 import { Input, Spacer, Text, Button } from '@nextui-org/react';
 import { useRef } from 'react';
-// import useCurrentWidth from '../../width';
-import useCurrentHeight from '../../height';
+import { useWindowSize } from 'react-use'
+
 
 function LoginTitle() {
-  let height = useCurrentHeight()
-
+    const {height} = useWindowSize()
     return(
         <div className='Login_Title'>
           {/* {console.log(height)}
@@ -26,7 +25,7 @@ function LoginTitle() {
 }
 
 function LoginPage() {
-  let height = useCurrentHeight()
+  const {height} = useWindowSize()
   const inputEmail = useRef('')
   const inputPassword = useRef('')
 
