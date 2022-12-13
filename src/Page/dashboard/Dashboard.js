@@ -5,6 +5,7 @@ import { useWindowSize } from 'react-use'
 export default function Dashboard() {
   const tableSize = 470;
   const spaceSize = 70;
+  const tableheight = 300;
   const {height} = useWindowSize()
   return (
     <div className='Dashboard'>
@@ -24,7 +25,7 @@ export default function Dashboard() {
         <Card.Body>
         </Card.Body>
       </Card>
-      <Card css={{ mw: tableSize, border: '$white', background: '$cyan100'}}>
+      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
         <Card.Body>
           <Text>Hydrometry</Text>
         </Card.Body>
@@ -33,7 +34,7 @@ export default function Dashboard() {
         <Card.Body>
         </Card.Body>
       </Card>
-      <Card css={{ mw: tableSize, border: '$white', background: '$cyan100'}}>
+      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
         <Card.Body>
           <Text>Hydrometry</Text>
         </Card.Body>
@@ -42,7 +43,7 @@ export default function Dashboard() {
         <Card.Body>
         </Card.Body>
       </Card>
-      <Card css={{ mw: tableSize, border: '$white', background: '$cyan100'}}>
+      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
         <Card.Body>
           <Text>Hydrometry</Text>
         </Card.Body>
