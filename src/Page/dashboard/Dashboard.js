@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spacer, Text, Card, Row, Button, Modal } from '@nextui-org/react'
+import { Spacer, Text, Card, Row, Button, Modal, gray } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 
 
@@ -23,7 +23,13 @@ export default function Dashboard() {
   const tableSize = 470;
   const spaceSize = 70;
   const tableheight = 300;
+  const [visible, setVisible] = React.useState(false);
+  const handler = () => setVisible(true);
   const {height} = useWindowSize()
+  const closeHandler = () => {
+    setVisible(false);
+  }
+
   return (
     <div className='Dashboard' align='center'>
       
@@ -39,13 +45,30 @@ export default function Dashboard() {
         </Text>
       <Row align='center'>
       {emptyCards(spaceSize * 2)}
-      {displayCards(tableSize, tableheight, "Hydrometry\n\n\n\n")}
+      <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+        <Text align="left" justify="left">
+          Hydrometry
+        </Text>
+      </Card>
       {emptyCards(spaceSize)}
       {displayCards(tableSize, tableheight, "Hydrometry")}
       {emptyCards(spaceSize)}
       {displayCards(tableSize, tableheight, "Hydrometry")}
       {emptyCards(spaceSize)}
       </Row>
+      <Modal
+        noPadding
+        closeButton
+        open={visible}
+        onClose={closeHandler}
+        
+        css={{height: 800, background: 'LightGray'}}
+        width={'1300px'}
+        >
+          <Text css={{color: '$black'}}>
+            FEUR
+          </Text>
+      </Modal>
     </div>
   )
 }
