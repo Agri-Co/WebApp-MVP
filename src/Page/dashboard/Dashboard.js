@@ -1,6 +1,23 @@
 import React from 'react'
-import { Spacer, Text, Card, Row } from '@nextui-org/react'
+import { Spacer, Text, Card, Row, Button, Modal } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
+
+
+
+function emptyCards(spaceSize) {
+  return <Card css={{ mw: spaceSize, backgroundColor: 'transparent'}}>
+        <Card.Body>
+        </Card.Body>
+      </Card>
+};
+
+function displayCards(tableSize, tableheight, text) {
+  return  <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={() => {}}>
+    <Text align="left" justify="left">
+      {text}
+    </Text>
+</Card>
+};
 
 export default function Dashboard() {
   const tableSize = 470;
@@ -8,7 +25,7 @@ export default function Dashboard() {
   const tableheight = 300;
   const {height} = useWindowSize()
   return (
-    <div className='Dashboard'>
+    <div className='Dashboard' align='center'>
       
       <Spacer y = {(height / 16)/ 15}/>
         <Text
@@ -20,38 +37,14 @@ export default function Dashboard() {
         >
           WELCOME TO THE DASHBOARD
         </Text>
-      <Row justify="center" align="center">
-      <Card css={{ mw: "300px",}}>
-        <Card.Body>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
-        <Card.Body>
-          <Text>Hydrometry</Text>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: spaceSize,}}>
-        <Card.Body>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
-        <Card.Body>
-          <Text>Hydrometry</Text>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: spaceSize,}}>
-        <Card.Body>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: tableSize, height: tableheight, border: '$white', background: '$cyan100'}}>
-        <Card.Body>
-          <Text>Hydrometry</Text>
-        </Card.Body>
-      </Card>
-      <Card css={{ mw: spaceSize,}}>
-        <Card.Body>
-        </Card.Body>
-      </Card>
+      <Row align='center'>
+      {emptyCards(spaceSize * 2)}
+      {displayCards(tableSize, tableheight, "Hydrometry\n\n\n\n")}
+      {emptyCards(spaceSize)}
+      {displayCards(tableSize, tableheight, "Hydrometry")}
+      {emptyCards(spaceSize)}
+      {displayCards(tableSize, tableheight, "Hydrometry")}
+      {emptyCards(spaceSize)}
       </Row>
     </div>
   )
