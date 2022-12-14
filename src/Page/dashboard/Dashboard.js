@@ -14,6 +14,7 @@ function popUpMeteo(mVisible, mCloseHandler) {
   return <Modal
     noPadding
     closeButton
+    blur
     open={mVisible}
     onClose={mCloseHandler}
     css={{height: 800, background: 'LightGray'}}
