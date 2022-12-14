@@ -58,14 +58,6 @@ function popUpHydro(visible, closeHandler) {
   </Modal>
 }
 
-function displayCards(tableSize, tableheight, text) {
-  return  <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={() => {}}>
-    <Text align="left" justify="left">
-      {text}
-    </Text>
-</Card>
-};
-
 export default function Dashboard() {
   const tableSize = 470;
   const spaceSize = 70;
