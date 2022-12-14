@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spacer, Text, Card, Row, Button, Modal, gray } from '@nextui-org/react'
+import { Spacer, Text, Card, Row, Button, Modal, gray, Grid } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 
 
@@ -32,43 +32,52 @@ export default function Dashboard() {
 
   return (
     <div className='Dashboard' align='center'>
-      
-      <Spacer y = {(height / 16)/ 15}/>
-        <Text
-          h1
-          size={60}
-          css={{
-            textGradient: "45deg, $blue600 -20%, $pink600 50%",
-          }}
-        >
-          WELCOME TO THE DASHBOARD
-        </Text>
-      <Row align='center'>
-      {emptyCards(spaceSize * 2)}
-      <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
-        <Text align="left" justify="left">
-          Hydrometry
-        </Text>
-      </Card>
-      {emptyCards(spaceSize)}
-      {displayCards(tableSize, tableheight, "Hydrometry")}
-      {emptyCards(spaceSize)}
-      {displayCards(tableSize, tableheight, "Hydrometry")}
-      {emptyCards(spaceSize)}
-      </Row>
-      <Modal
-        noPadding
-        closeButton
-        open={visible}
-        onClose={closeHandler}
-        
-        css={{height: 800, background: 'LightGray'}}
-        width={'1300px'}
-        >
-          <Text css={{color: '$black'}}>
-            FEUR
+      <Grid>
+        <Spacer y = {(height / 16)/ 15}/>
+          <Text
+            h1
+            size={60}
+            css={{
+              textGradient: "45deg, $blue600 -20%, $pink600 50%",
+            }}
+          >
+            WELCOME TO THE DASHBOARD
           </Text>
-      </Modal>
+        <Row align='center'>
+        {emptyCards(spaceSize * 2)}
+        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+          <Text align="left" justify="left">
+            Hydrometry
+          </Text>
+        </Card>
+        {emptyCards(spaceSize)}
+        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+          <Text align="left" justify="left">
+            Hydrometry
+          </Text>
+        </Card>
+        {emptyCards(spaceSize)}
+        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+          <Text align="left" justify="left">
+            Hydrometry
+          </Text>
+        </Card>
+        {emptyCards(spaceSize)}
+        </Row>
+        <Modal
+          noPadding
+          closeButton
+          open={visible}
+          onClose={closeHandler}
+          
+          css={{height: 800, background: 'LightGray'}}
+          width={'1300px'}
+          >
+            <Text css={{color: '$black'}}>
+              FEUR
+            </Text>
+        </Modal>
+      </Grid>
     </div>
   )
 }
