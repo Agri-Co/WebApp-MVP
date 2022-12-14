@@ -26,6 +26,38 @@ function popUpMeteo(mVisible, mCloseHandler) {
     </Modal>
 }
 
+function popUpRandom(rVisible, rCloseHandler) {
+  return <Modal
+    noPadding
+    blur
+    closeButton
+    open={rVisible}
+    onClose={rCloseHandler}      
+    css={{height: 800, background: 'LightGray'}}
+    width={'1300px'}
+    >
+    <Text css={{color: '$black'}}>
+      RANDOM
+    </Text>
+  </Modal>
+}
+
+function popUpHydro(visible, closeHandler) {
+  return <Modal
+    noPadding
+    blur
+    closeButton
+    open={visible}
+    onClose={closeHandler}      
+    css={{height: 800, background: 'LightGray'}}
+    width={'1300px'}
+    >
+    <Text css={{color: '$black'}}>
+      HYDROMETRY
+    </Text>
+  </Modal>
+}
+
 function displayCards(tableSize, tableheight, text) {
   return  <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={() => {}}>
     <Text align="left" justify="left">
@@ -40,7 +72,10 @@ export default function Dashboard() {
   const tableheight = 300;
   const [visible, setVisible] = React.useState(false);
   const [mVisible, mSetVisible] = React.useState(false);
+  const [rVisible, rSetVisible] = React.useState(false);
   const mHandler = () => mSetVisible(true);
+  const rHandler = () => rSetVisible(true);
+  const rCloseHandler = () => rSetVisible(false);
   const mCloseHandler = () => mSetVisible(false);
   const handler = () => setVisible(true);
   const {height} = useWindowSize()
@@ -60,7 +95,7 @@ export default function Dashboard() {
             WELCOME TO THE DASHBOARD
           </Text>
         <Row align='center'>
-        {emptyCards(spaceSize * 2)}
+        {emptyCards(spaceSize * 4)}
         <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
           <Text align="left" justify="left">
             Hydrometry
@@ -73,28 +108,16 @@ export default function Dashboard() {
           </Text>
         </Card>
         {emptyCards(spaceSize)}
-        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={rHandler}>
           <Text align="left" justify="left">
-            Hydrometry
+            Random
           </Text>
         </Card>
         {emptyCards(spaceSize)}
         </Row>
-        <Modal
-          noPadding
-          blur
-          closeButton
-          open={visible}
-          onClose={closeHandler}
-          
-          css={{height: 800, background: 'LightGray'}}
-          width={'1300px'}
-          >
-            <Text css={{color: '$black'}}>
-              FEUR
-            </Text>
-        </Modal>
+        {popUpHydro(visible, closeHandler)}
         {popUpMeteo(mVisible, mCloseHandler)}
+        {popUpRandom(rVisible, rCloseHandler)}
       </Grid>
     </div>
   )
