@@ -1,6 +1,5 @@
 import { useWebSocket } from "react-use-websocket/dist/lib/use-websocket"
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { setwatering } from "../Features/WateringSlice";
 import { sethumidity } from "../Features/HumiditySlice"
 
