@@ -41,14 +41,10 @@ export default function Dashboard() {
   const [visible, setVisible] = React.useState(false);
   const [mVisible, mSetVisible] = React.useState(false);
   const mHandler = () => mSetVisible(true);
-  const mCloseHandler = () => {
-    mSetVisible(false);
-  }
+  const mCloseHandler = () => mSetVisible(false);
   const handler = () => setVisible(true);
   const {height} = useWindowSize()
-  const closeHandler = () => {
-    setVisible(false);
-  }
+  const closeHandler = () => setVisible(false);
 
   return (
     <div className='Dashboard' align='center'>
