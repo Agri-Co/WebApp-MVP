@@ -11,6 +11,21 @@ function emptyCards(spaceSize) {
       </Card>
 };
 
+function popUpMeteo(mVisible, mCloseHandler) {
+  return <Modal
+    noPadding
+    closeButton
+    open={mVisible}
+    onClose={mCloseHandler}
+    css={{height: 800, background: 'LightGray'}}
+    width={'1300px'}
+    >
+      <Text css={{color: '$black'}}>
+        METEO
+      </Text>
+    </Modal>
+}
+
 function displayCards(tableSize, tableheight, text) {
   return  <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={() => {}}>
     <Text align="left" justify="left">
@@ -24,6 +39,11 @@ export default function Dashboard() {
   const spaceSize = 70;
   const tableheight = 300;
   const [visible, setVisible] = React.useState(false);
+  const [mVisible, mSetVisible] = React.useState(false);
+  const mHandler = () => mSetVisible(true);
+  const mCloseHandler = () => {
+    mSetVisible(false);
+  }
   const handler = () => setVisible(true);
   const {height} = useWindowSize()
   const closeHandler = () => {
@@ -51,9 +71,9 @@ export default function Dashboard() {
           </Text>
         </Card>
         {emptyCards(spaceSize)}
-        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={handler}>
+        <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={mHandler}>
           <Text align="left" justify="left">
-            Hydrometry
+            Meteo
           </Text>
         </Card>
         {emptyCards(spaceSize)}
@@ -77,6 +97,7 @@ export default function Dashboard() {
               FEUR
             </Text>
         </Modal>
+        {popUpMeteo(mVisible, mCloseHandler)}
       </Grid>
     </div>
   )
