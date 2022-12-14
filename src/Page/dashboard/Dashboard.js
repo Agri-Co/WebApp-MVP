@@ -3,7 +3,6 @@ import { Spacer, Text, Card, Row, Button, Modal, gray, Grid } from '@nextui-org/
 import { useWindowSize } from 'react-use'
 
 
-
 function emptyCards(spaceSize) {
   return <Card css={{ mw: spaceSize, backgroundColor: 'transparent'}}>
         <Card.Body>
@@ -66,6 +65,7 @@ export default function Dashboard() {
         </Row>
         <Modal
           noPadding
+          blur
           closeButton
           open={visible}
           onClose={closeHandler}
