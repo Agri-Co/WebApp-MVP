@@ -7,15 +7,19 @@ import { Routes, Route } from "react-router-dom"
 import NavbarComponent from './Component/Navbar/Navbar'
 import SidebarComponent from './Component/Sidebar/Sidebar';
 // import { useWindowSize } from 'react-use';
+import { WebSocketTest } from './Websocket/Client';
 
 
 function App({ Component }) {
   // const {width, height} = useWindowSize()
+  const sendMessage = WebSocketTest()
 
   return (
     <div className='App'>
       <NavbarComponent />
       <SidebarComponent/>
+      {/* {lastMessage ? console.log(lastMessage.data): null} */}
+      {sendMessage("hello")}
       <div align='center' style={{
                     zIndex:0,
                     }}>
