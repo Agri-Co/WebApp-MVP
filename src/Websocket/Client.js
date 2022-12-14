@@ -10,11 +10,12 @@ export function WebSocketClient() {
     const dispatch = useDispatch()
     const {lastJsonMessage} = useWebSocket(socketUrl, {onOpen: () => console.log('open'), shouldReconnect: (CloseEvent) => true,})
     // sendMessage('hello')
-    // if (lastMessage !== null)
-    //     console.log("lastmessage:", lastMessage)
     if (lastJsonMessage !== null)
-        console.log("jsonmessage:", lastJsonMessage)
-    // if (lastJsonMessage !== null)
-        // dispatch(setwatering(lastJsonMessage.))
-        // dispatch(sethumidity(lastJsonMessage.))
+        for (var i in lastJsonMessage) {
+            console.log("jsonmessage content:", i)
+            if (i === "humidity")
+                dispatch(sethumidity(lastJsonMessage[i]))
+            if (i === "nextWatering")
+                dispatch(setwatering(lastJsonMessage[i]))
+        }
 }
