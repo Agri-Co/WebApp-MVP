@@ -14,7 +14,7 @@ export function WebSocketClient() {
     //     console.log("lastmessage:", lastMessage)
     if (lastJsonMessage !== null)
         console.log("jsonmessage:", lastJsonMessage)
-    if (lastJsonMessage !== null)
+    // if (lastJsonMessage !== null)
         // dispatch(setwatering(lastJsonMessage.))
         // dispatch(sethumidity(lastJsonMessage.))
 }
