@@ -2,8 +2,7 @@ import React from 'react'
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import { Button } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
-import { useLocation, useNavigate } from 'react-router-dom'
-import {goto} from '../Navbar/Navbar'
+import { useNavigate } from 'react-router-dom'
 
 
 function SidebarComponent() {
@@ -26,7 +25,6 @@ function SidebarComponent() {
                     zIndex:1,
                     }}
             >
-            {console.log(height)}
             <Sidebar transitionDuration={1000}>
                 <Menu>
                     <MenuItem> 

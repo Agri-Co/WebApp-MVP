@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spacer, Text, Card, Row, Button, Modal, gray, Grid } from '@nextui-org/react'
+import { Spacer, Text, Card, Row, Modal, Grid } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 
 
