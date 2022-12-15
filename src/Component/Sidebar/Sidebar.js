@@ -3,10 +3,12 @@ import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import { Button } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
 import { useNavigate } from 'react-router-dom'
+import { setemplacement } from '../../Features/profilSlice'
+import { useDispatch } from 'react-redux'
 
 
 function SidebarComponent() {
-
+    const dispatch = useDispatch()
     const {height} = useWindowSize();
     const navigate = useNavigate();
 
@@ -38,7 +40,14 @@ function SidebarComponent() {
                         </Button>
                     </MenuItem>
                     <MenuItem>
-                        TEST 2
+                        <Button onPress={() => dispatch(setemplacement('Paris'))}>
+                            Paris
+                        </Button>
+                    </MenuItem>
+                    <MenuItem>
+                        <Button onPress={() => dispatch(setemplacement('Marseille'))}>
+                            Marseille
+                        </Button>
                     </MenuItem>
                 </Menu>
             </Sidebar>
