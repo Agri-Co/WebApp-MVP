@@ -5,6 +5,7 @@ export const profilSlice = createSlice({
     initialState:{
         email: 'null',
         password: 'null',
+        emplacement: 'Paris'
     },
     reducers: {
         setemail: (state, action) => {
@@ -13,9 +14,12 @@ export const profilSlice = createSlice({
         setpassword: (state, action) => {
             state.password = action.payload
         },
+        setemplacement: (state, action) => {
+            state.emplacement = action.payload
+        }
     }
 })
 
-export const {setemail, setpassword} = profilSlice.actions
+export const {setemail, setpassword, setemplacement} = profilSlice.actions
 
 export default profilSlice.reducer
