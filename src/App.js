@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom"
 import NavbarComponent from './Component/Navbar/Navbar'
 import SidebarComponent from './Component/Sidebar/Sidebar';
 // import { useWindowSize } from 'react-use';
+import { WebSocketClient } from './Websocket/Client';
 
 
 function App({ Component }) {
@@ -16,6 +17,7 @@ function App({ Component }) {
     <div className='App'>
       <NavbarComponent />
       <SidebarComponent/>
+      {WebSocketClient()}
       <div align='center' style={{
                     zIndex:0,
                     }}>
