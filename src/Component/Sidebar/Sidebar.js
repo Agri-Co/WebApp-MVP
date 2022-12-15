@@ -2,9 +2,19 @@ import React from 'react'
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import { Button } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
+import { useNavigate } from 'react-router-dom'
+
 
 function SidebarComponent() {
-    const {height} = useWindowSize()
+
+    const {height} = useWindowSize();
+    const navigate = useNavigate();
+
+    function handleClick()
+    {
+        navigate("/dashboard");
+    }
+
 
     return (
         <div className='SidebarComponent'
@@ -15,11 +25,21 @@ function SidebarComponent() {
                     zIndex:1,
                     }}
             >
-            {console.log(height)}
             <Sidebar transitionDuration={1000}>
                 <Menu>
-                    <MenuItem> <Button>TEST</Button> </MenuItem>
-                    <MenuItem>TEST 2</MenuItem>
+                    <MenuItem> 
+                        <Button>
+                            TEST
+                        </Button> 
+                    </MenuItem>
+                    <MenuItem>
+                        <Button onClick={() => handleClick()}>
+                            DASHBOARD
+                        </Button>
+                    </MenuItem>
+                    <MenuItem>
+                        TEST 2
+                    </MenuItem>
                 </Menu>
             </Sidebar>
         </div>
