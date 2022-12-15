@@ -1,6 +1,7 @@
 import React from 'react'
 import { Spacer, Text, Card, Row, Modal, Grid } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 function emptyCards(spaceSize) {
@@ -73,6 +74,11 @@ export default function Dashboard() {
   const {height} = useWindowSize()
   const closeHandler = () => setVisible(false);
 
+  const watering = useSelector(state => state.wateringdata.watering)
+  const hydrometry = useSelector(state => state.humiditydata.humidity)
+
+  console.log("TEST " + hydrometry)
+
   return (
     <div className='Dashboard' align='center'>
       <Grid>
@@ -92,6 +98,8 @@ export default function Dashboard() {
           <Text align="left" justify="left">
             Hydrometry
           </Text>
+          Watering {watering}
+          Hydrometry {hydrometry}
         </Card>
         {emptyCards(spaceSize)}
         <Card css={{ width: tableSize, height: tableheight, border: '$white', background: '$cyan100'}} isPressable onPress={mHandler}>
