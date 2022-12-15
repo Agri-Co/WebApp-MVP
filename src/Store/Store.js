@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import profilReducer from '../Features/profilSlice'
 import wateringReducer from '../Features/WateringSlice'
 import humidityReducer from '../Features/HumiditySlice'
+import { loggerMiddleware } from "../Websocket/Client";
 
 export default configureStore({
     reducer: {
@@ -9,4 +10,6 @@ export default configureStore({
         wateringdata: wateringReducer,
         humiditydata: humidityReducer,
     },
+    middleware: [loggerMiddleware]
+    
 })
