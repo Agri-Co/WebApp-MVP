@@ -56,6 +56,8 @@ export function WebSocketClient() {
                     // console.log("actino afet action", actioncount)
                 }
                 break
+             default:
+                break
         }
     })
 }
