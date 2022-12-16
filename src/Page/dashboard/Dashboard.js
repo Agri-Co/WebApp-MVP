@@ -1,7 +1,7 @@
 import React from 'react'
 import { Spacer, Text, Card, Row, Modal, Grid } from '@nextui-org/react'
 import { useWindowSize } from 'react-use'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
 function emptyCards(spaceSize) {
