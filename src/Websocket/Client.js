@@ -27,7 +27,7 @@ export function WebSocketClient() {
 
     // console.log("action: ",actioncount)
     const dispatch = useDispatch()
-    const { sendMessage, sendJsonMessage, lastJsonMessage } = useWebSocket(socketUrl, { onOpen: () => console.log('open'), shouldReconnect: (CloseEvent) => true, })
+    const { sendJsonMessage, lastJsonMessage } = useWebSocket(socketUrl, { onOpen: () => console.log('open'), shouldReconnect: (CloseEvent) => true, })
     console.log("DeBUG1")
 
     useEffect(() => {
