@@ -24,18 +24,14 @@ Describe your project briefly, including its purpose and key features.
 
 To install and run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/project-name.git`
-2. Navigate to the project directory: `cd project-name`
+1. Clone the repository: `git clone https://github.com/Agri-Co/WebApp-MVP/tree/api_meteo`
+2. Navigate to the project directory: `cd python-server`
 3. Create a virtual environment: `python3 -m venv venv`
-4. Activate the virtual environment:
-   - For Linux/Mac: `source venv/bin/activate`
-   - For Windows: `venv\Scripts\activate`
-5. Install the dependencies: `pip install -r requirements.txt`
-6. Set up the database (if applicable):
-   - Create a database and update the configuration in `config.py`.
-   - Run the database migration: `flask db upgrade`
-7. Start the development server: `flask run`
-8. Open your browser and visit `http://localhost:5000` to see the application.
+4. Install the dependencies:
+   `pip install flask`
+   `pip install python-dotenv`
+5. Start the development server: `python main.py`
+6. Open your browser and visit `http://localhost:5000` to see the application.
 
 ## Usage
 
